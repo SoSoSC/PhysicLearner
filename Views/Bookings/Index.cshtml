@@ -1,0 +1,56 @@
+﻿@model IEnumerable<PhysicLeaner.Models.Booking>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="Bookingtable">
+    <thead>
+        <tr>
+            <th>
+                Teacher First Name
+            </th>
+            <th>
+                Teacher First Name
+            </th>
+            <th>
+                Course Time
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.first_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.last_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.available_time)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+@section Scripts {
+
+    @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
+    @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
+    <script>
+ $(document).ready(function () {
+     $('.Bookingtable').DataTable();
+ });
+    </script>
+}
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css"
+      rel="stylesheet" />

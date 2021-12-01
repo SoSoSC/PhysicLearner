@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Welcome to the PhysicsLearner</h1>
+    <p class="lead">
+        PhysicsLearner is a website which designed for an education center named Physics Learner Center to make online booking.<br />
+        The courses in the center are provided by outstanding university students who are studying physics and having a GPA above 3.8 (5).<br />
+        Those students, as the teachers of our courses, teaching courses as their part-time job.<br />
+        You can observe the university name and GPA of those teachers on the table and select courses to make a booking.<br />
+    </p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Get direction </h2>
+        <p>
+            The postion of Physics Learner Center is:<br />
+            345 Clayton Rd, Clayton VIC 3168 <br />
+            Click to get directions to Physics Learner Center.
+        </p>
+        <p><a class="btn btn-default" href="@Url.Action("Map","Home")">Click &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get course list</h2>
+        <p>Click here to view our course list</p>
+        <p><a class="btn btn-default" href="@Url.Action("Index","Courses")">Click &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Contact us</h2>
+        <p>If you want to join us, contact us through email with your CV.<br />
+        Our Email:wwelize0317@gamil.com.</p>
+        <p><a class="btn btn-default" href="@Url.Action("EmailSender","Home")">Click to contact &raquo;</a></p>
+    </div>
+</div>
